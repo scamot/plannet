@@ -53,6 +53,17 @@
     padding: 10px 14px; font: inherit; font-size: 16px; outline: none;
   }
   .search:focus { border-color: var(--accent); }
+  .filtros { display: flex; gap: 8px; margin-top: 12px; }
+  .filtros .search { margin-top: 0; flex: 1; min-width: 0; }
+  .zona {
+    flex: none; max-width: 46%; appearance: none; -webkit-appearance: none;
+    background: var(--surface); color: var(--muted);
+    border: 1px solid var(--border); border-radius: 8px;
+    padding: 10px 12px; font: inherit; font-size: 15px; outline: none;
+  }
+  .zona.on { color: var(--accent); border-color: rgba(111,211,191,.5); background: var(--accent-dim); }
+  .group-title { font-size: 18px; font-weight: 600; margin: 22px 0 0; }
+  .group-title:first-child { margin-top: 0; }
 
   .chips { display: flex; gap: 8px; overflow-x: auto; margin: 12px -20px 0; padding: 0 20px; scrollbar-width: none; }
   .chips::-webkit-scrollbar { display: none; }
@@ -180,14 +191,14 @@ const TIPOS = {
   museo:       { label: 'Museos y expos', uno: 'Museo / expo' },
   plan:        { label: 'Planes',       uno: 'Plan' },
 };
-const ORDEN_TIPOS = ['plan','museo','teatro','cine','concierto','espectaculo','restaurante'];
+const ORDEN_TIPOS = ['restaurante','plan','museo','teatro','cine','concierto','espectaculo'];
 const MOMENTOS = ['Desayuno','Brunch','Café','Comida','Cena','Vermut','Tardeo','Afterwork','Vinos','Copas','Delivery','Cowork'];
 const CASA = 'Barcelona';
 const AVISO_DIAS = 14;   // la pestaña de destino aparece X días antes del viaje
 const ULTIMOS_DIAS = 10; // "Últimos días" si acaba en menos de X días
 
 let PLANES = [], SUG = [], VIAJES = [], ACTUALIZADO = null, SUG_FECHA = null;
-const st = { tab: 'casa', tipo: 'todo', momento: null, q: '', lugar: null };
+const st = { tab: 'casa', tipo: 'todo', momento: null, zona: null, q: '', lugar: null };
 
 const hoy = (() => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); })();
 const dias = (a, b) => Math.round((new Date(b) - new Date(a)) / 864e5);
@@ -223,7 +234,7 @@ function viajeActivo() {
 
 function meta(p) {
   const bits = [];
-  if (p.zona && p.zona !== st.zonaActual) bits.push(p.zona);
+  if (p.zona && p.zona !== st.zona) bits.push(p.zona);
   if (p.tipo === 'restaurante') {
     if (p.cocina) bits.push(p.cocina);
     else if (p.momentos) bits.push(p.momentos.slice(0, 3).join(', '));
@@ -247,59 +258,78 @@ function card(p, extra = '') {
     </div>${badge}</button>`;
 }
 
-function filtrar(lista) {
+function filtrar(lista, ignorarTipo = false) {
   const q = norm(st.q.trim());
   return lista.filter(p => {
     if (p.estado === 'descartado') return false;
-    if (st.tipo !== 'todo' && p.tipo !== st.tipo) return false;
+    if (!ignorarTipo && st.tipo !== 'todo' && p.tipo !== st.tipo) return false;
+    if (st.zona && (p.zona || 'Sin zona') !== st.zona) return false;
     if (st.momento && !(p.momentos || []).includes(st.momento)) return false;
     if (q) {
-      const hay = norm([p.titulo, p.zona, p.cocina, p.descripcion, p.direccion, p.notas, TIPOS[p.tipo]?.uno, (p.momentos || []).join(' ')].join(' '));
+      const hay = norm([p.titulo, p.zona, p.cocina, p.descripcion, p.direccion, p.notas, p.motivo, TIPOS[p.tipo]?.uno, (p.momentos || []).join(' ')].join(' '));
       if (!q.split(/\s+/).every(w => hay.includes(w))) return false;
     }
     return true;
   });
 }
 
-// Lista de un lugar: eventos con fecha arriba, después por tipo (restaurantes por zona), pasados al final plegados
+const ordenFecha = (a, b) => (tiempo(a).orden || 'z').localeCompare(tiempo(b).orden || 'z');
+const ordenNombre = (a, b) => (a.estado === 'hecho') - (b.estado === 'hecho') || a.titulo.localeCompare(b.titulo, 'es');
+const sec = (titulo, items, fn = p => card(p)) => items.length ? `<div class="sec"><span>${esc(titulo)}</span><span>${items.length}</span></div>` + items.map(fn).join('') : '';
+const cardSug = s => card(s, s.motivo ? `<div class="sug-why">${esc(s.motivo)}</div>` : '');
+
+function porZona(items) {
+  const g = {};
+  for (const p of items) (g[p.zona || 'Sin zona'] = g[p.zona || 'Sin zona'] || []).push(p);
+  return Object.keys(g)
+    .sort((a, b) => (a === 'Sin zona') - (b === 'Sin zona') || g[b].length - g[a].length || a.localeCompare(b, 'es'))
+    .map(k => sec(k, g[k].sort(ordenNombre))).join('');
+}
+
+// Orden: restaurantes → recomendaciones de Claude → en cartel → resto por tipo → pasados (plegados)
 function renderLugar(lugar) {
   const base = PLANES.filter(p => p.lugar === lugar);
-  const lista = filtrar(base);
-  const activos = lista.filter(p => !tiempo(p).pasado);
-  const pasados = lista.filter(p => tiempo(p).pasado);
+  const sugBase = SUG.filter(s => s.lugar === lugar && !tiempo(s).pasado);
+  const vivos = filtrar(base).filter(p => !tiempo(p).pasado);
+  const pasados = filtrar(base).filter(p => tiempo(p).pasado);
+  const sug = filtrar(sugBase, true);
   let h = '';
 
-  const conFecha = activos.filter(p => tiempo(p).orden).sort((a, b) => tiempo(a).orden.localeCompare(tiempo(b).orden));
-  const sinFecha = activos.filter(p => !tiempo(p).orden);
-  if (conFecha.length) h += `<div class="sec"><span>En cartel</span><span>${conFecha.length}</span></div>` + conFecha.map(p => card(p)).join('');
+  if (st.tipo === 'parati') {
+    h = sec('Recomendaciones de Claude', sug.sort(ordenFecha), cardSug);
+    if (!sug.length) h = `<div class="empty">${sugBase.length ? 'Nada con estos filtros.' : 'Aquí aparecerán mis recomendaciones para ti: estrenos, conciertos, expos, restaurantes nuevos… según lo que te vaya gustando.<br><br>Si alguna te encaja, dime <b>«pasa X a mi lista»</b>.'}</div>`;
+    return h;
+  }
 
-  const grupos = {};
-  for (const p of sinFecha) {
-    const k = st.tipo === 'restaurante' || (st.tipo === 'todo' && p.tipo === 'restaurante' && st.q)
-      ? (p.zona || 'Otros') : (st.tipo === 'todo' ? TIPOS[p.tipo]?.label || p.tipo : (p.zona || 'Otros'));
-    (grupos[k] = grupos[k] || []).push(p);
-  }
-  let claves = Object.keys(grupos);
-  if (st.tipo === 'todo' && !st.q) {
-    const ord = ORDEN_TIPOS.map(t => TIPOS[t].label);
-    claves.sort((a, b) => ord.indexOf(a) - ord.indexOf(b));
+  const rest = vivos.filter(p => p.tipo === 'restaurante');
+  const otros = vivos.filter(p => p.tipo !== 'restaurante');
+  if (st.tipo === 'restaurante') {
+    h += porZona(rest);
+  } else if (st.tipo === 'todo') {
+    if (rest.length) h += st.zona ? sec('Restaurantes', rest.sort(ordenNombre)) : `<div class="group-title">Restaurantes</div>` + porZona(rest);
+    if (sug.length) h += `<div class="group-title">✨ Para ti</div>` + sug.sort(ordenFecha).map(cardSug).join('');
+    const conFecha = otros.filter(p => tiempo(p).orden).sort(ordenFecha);
+    h += sec('En cartel', conFecha);
+    const sinFecha = otros.filter(p => !tiempo(p).orden);
+    for (const t of ORDEN_TIPOS) h += sec(TIPOS[t].label, sinFecha.filter(p => p.tipo === t).sort(ordenNombre));
   } else {
-    claves.sort((a, b) => (a === 'Otros') - (b === 'Otros') || grupos[b].length - grupos[a].length || a.localeCompare(b));
-  }
-  for (const k of claves) {
-    const items = grupos[k].sort((a, b) => (a.estado === 'hecho') - (b.estado === 'hecho') || a.titulo.localeCompare(b.titulo));
-    h += `<div class="sec"><span>${esc(k)}</span><span>${items.length}</span></div>` + items.map(p => card(p)).join('');
+    h += sec('En cartel', otros.filter(p => tiempo(p).orden).sort(ordenFecha));
+    h += porZona(otros.filter(p => !tiempo(p).orden));
   }
   if (pasados.length) h += `<details class="past"><summary>Ya pasado · ${pasados.length} ▸</summary><div class="inner">${pasados.map(p => card(p)).join('')}</div></details>`;
-  if (!lista.length) h = `<div class="empty">${base.length ? 'Nada con estos filtros.' : `Aún no hay nada en <b>${esc(lugar)}</b>.<br>Dile a Claude qué añadir.`}</div>`;
+  if (!h) h = `<div class="empty">${base.length ? 'Nada con estos filtros.' : `Aún no hay nada en <b>${esc(lugar)}</b>.<br>Dile a Claude qué añadir.`}</div>`;
   return h;
 }
 
 function chipsTipo(lugar) {
   const base = PLANES.filter(p => p.lugar === lugar && p.estado !== 'descartado');
+  const nSug = SUG.filter(s => s.lugar === lugar && !tiempo(s).pasado).length;
   const tipos = ORDEN_TIPOS.filter(t => base.some(p => p.tipo === t));
-  let h = `<div class="chips">` + [['todo', 'Todo'], ...tipos.map(t => [t, TIPOS[t].label])]
-    .map(([k, l]) => `<button class="chip ${st.tipo === k ? 'on' : ''}" onclick="setTipo('${k}')">${l}</button>`).join('') + `</div>`;
+  const lista = [['todo', 'Todo']];
+  if (tipos.includes('restaurante')) lista.push(['restaurante', TIPOS.restaurante.label]);
+  lista.push(['parati', '✨ Para ti' + (nSug ? ` · ${nSug}` : '')]);
+  for (const t of tipos) if (t !== 'restaurante') lista.push([t, TIPOS[t].label]);
+  let h = `<div class="chips">` + lista.map(([k, l]) => `<button class="chip ${st.tipo === k ? 'on' : ''}" onclick="setTipo('${k}')">${l}</button>`).join('') + `</div>`;
   if (st.tipo === 'restaurante') {
     const ms = MOMENTOS.filter(m => base.some(p => (p.momentos || []).includes(m)));
     h += `<div class="chips">` + ms.map(m => `<button class="chip small ${st.momento === m ? 'on' : ''}" onclick="setMomento('${m}')">${m}</button>`).join('') + `</div>`;
@@ -307,11 +337,27 @@ function chipsTipo(lugar) {
   return h;
 }
 
+function selectorZona(lugar) {
+  const c = {};
+  const pool = [...PLANES, ...SUG].filter(p => p.lugar === lugar && p.estado !== 'descartado' && !tiempo(p).pasado
+    && (st.tipo === 'todo' || st.tipo === 'parati' ? true : p.tipo === st.tipo));
+  for (const p of pool) { const z = p.zona || 'Sin zona'; c[z] = (c[z] || 0) + 1; }
+  const zonas = Object.keys(c).sort((a, b) => (a === 'Sin zona') - (b === 'Sin zona') || a.localeCompare(b, 'es'));
+  if (zonas.length < 2 && !st.zona) return '';
+  return `<select class="zona ${st.zona ? 'on' : ''}" onchange="st.zona=this.value||null;render()" aria-label="Zona">
+    <option value="">📍 Todas las zonas</option>
+    ${zonas.map(z => `<option value="${esc(z)}" ${st.zona === z ? 'selected' : ''}>${esc(z)} (${c[z]})</option>`).join('')}
+  </select>`;
+}
+
 function cabecera(titulo, lugar) {
   const n = PLANES.filter(p => p.lugar === lugar && p.estado !== 'descartado' && !tiempo(p).pasado).length;
   return `<div class="top"><h1>Plannet</h1><span class="count">${n} planes</span></div>
     <div class="title">${esc(titulo)}</div>
-    <input class="search" type="search" placeholder="Buscar…" value="${esc(st.q)}" oninput="st.q=this.value;pintarLista()">
+    <div class="filtros">
+      <input class="search" type="search" placeholder="Buscar…" value="${esc(st.q)}" oninput="st.q=this.value;pintarLista()">
+      ${selectorZona(lugar)}
+    </div>
     ${chipsTipo(lugar)}`;
 }
 
@@ -323,62 +369,44 @@ function lugaresFuera() {
 }
 
 function render(soloLista = false) {
-  const Hd = document.getElementById('header'), M = document.getElementById('main');
-  const H = soloLista ? {} : Hd;
+  const H = document.getElementById('header'), M = document.getElementById('main');
   const v = viajeActivo();
   if (!soloLista) document.getElementById('nav').innerHTML = [
     ['casa', '🏙️', CASA],
     ['destino', v ? '✈️' : '🧭', v ? v.lugar : 'Escapadas'],
-    ['descubrir', '✨', 'Descubrir'],
   ].map(([k, ic, l]) => `<button class="${st.tab === k ? 'on' : ''}" onclick="setTab('${k}')"><span class="ic">${ic}</span>${esc(l)}</button>`).join('');
 
   if (st.tab === 'casa') {
-    H.innerHTML = cabecera(CASA, CASA);
+    if (!soloLista) H.innerHTML = cabecera(CASA, CASA);
     M.innerHTML = renderLugar(CASA);
-  } else if (st.tab === 'destino') {
-    const lugar = st.lugar || (v && v.lugar);
-    if (lugar) {
-      const viaje = VIAJES.find(x => x.lugar === lugar && x.hasta >= hoy);
-      H.innerHTML = cabecera(lugar, lugar);
-      let top = '';
-      if (st.lugar && !(v && v.lugar === st.lugar)) top += `<button class="back" onclick="st.lugar=null;resetFiltros();render()">‹ Escapadas</button>`;
-      if (viaje) {
-        const n = dias(hoy, viaje.desde);
-        const cuando = n > 0 ? `Faltan ${n} día${n > 1 ? 's' : ''}` : 'Estás allí';
-        top += `<div class="trip"><div class="trip-name">${esc(viaje.lugar)}</div>
-          <div class="trip-meta">${fmt(viaje.desde)} – ${fmt(viaje.hasta)} · ${cuando}</div>
-          ${viaje.notas ? `<div class="trip-notes">${esc(viaje.notas)}</div>` : ''}</div>`;
-      }
-      const sug = SUG.filter(s => s.lugar === lugar && !tiempo(s).pasado);
-      if (sug.length && !st.q && st.tipo === 'todo') top += `<div class="sec"><span>Sugerencias para el viaje</span><span>${sug.length}</span></div>` + sug.map(s => card(s, s.motivo ? `<div class="sug-why">${esc(s.motivo)}</div>` : '')).join('');
-      M.innerHTML = top + renderLugar(lugar);
-    } else {
-      H.innerHTML = `<div class="top"><h1>Plannet</h1></div><div class="title">Escapadas</div>`;
-      const ls = lugaresFuera();
-      M.innerHTML = `<div class="empty" style="padding:8px 0 16px;text-align:left">No hay ningún viaje a la vista. Cuando vayas a salir, díselo a Claude («me voy a Menorca del 10 al 17 de julio») y esta pestaña se convertirá en tu destino unos días antes.</div>
-        <div class="sec"><span>Lugares guardados</span><span>${ls.length}</span></div>` +
-        ls.map(([l, n]) => `<button class="card" onclick="st.lugar='${esc(l)}';resetFiltros();render()"><div class="card-main"><div class="card-name">${esc(l)}</div><div class="card-meta">${n} planes</div></div><span class="badge mute">›</span></button>`).join('');
+    return;
+  }
+  const lugar = st.lugar || (v && v.lugar);
+  if (lugar) {
+    const viaje = VIAJES.find(x => x.lugar === lugar && x.hasta >= hoy);
+    if (!soloLista) H.innerHTML = cabecera(lugar, lugar);
+    let top = '';
+    if (st.lugar && !(v && v.lugar === st.lugar)) top += `<button class="back" onclick="st.lugar=null;resetFiltros();render()">‹ Escapadas</button>`;
+    if (viaje && !st.q) {
+      const n = dias(hoy, viaje.desde);
+      const cuando = n > 0 ? `Faltan ${n} día${n > 1 ? 's' : ''}` : 'Estás allí';
+      top += `<div class="trip"><div class="trip-name">${esc(viaje.lugar)}</div>
+        <div class="trip-meta">${fmt(viaje.desde)} – ${fmt(viaje.hasta)} · ${cuando}</div>
+        ${viaje.notas ? `<div class="trip-notes">${esc(viaje.notas)}</div>` : ''}</div>`;
     }
+    M.innerHTML = top + renderLugar(lugar);
   } else {
-    H.innerHTML = `<div class="top"><h1>Plannet</h1><span class="count">${SUG_FECHA ? 'Actualizado ' + fmt(SUG_FECHA) : ''}</span></div><div class="title">Descubrir</div>`;
-    const vivas = SUG.filter(s => !tiempo(s).pasado);
-    if (!vivas.length) {
-      M.innerHTML = `<div class="empty">Aquí aparecerán las propuestas que Claude encuentre: estrenos, conciertos, expos, restaurantes nuevos…<br><br>Si alguna te encaja, dile <b>«pasa X a mi lista»</b>.</div>`;
-    } else {
-      const g = {};
-      for (const s of vivas) (g[s.lugar] = g[s.lugar] || []).push(s);
-      M.innerHTML = Object.keys(g).sort((a, b) => (b === CASA) - (a === CASA)).map(l =>
-        `<div class="sec"><span>${esc(l)}</span><span>${g[l].length}</span></div>` +
-        g[l].sort((a, b) => (tiempo(a).orden || 'z').localeCompare(tiempo(b).orden || 'z'))
-            .map(s => card(s, s.motivo ? `<div class="sug-why">${esc(s.motivo)}</div>` : '')).join('')
-      ).join('');
-    }
+    H.innerHTML = `<div class="top"><h1>Plannet</h1></div><div class="title">Escapadas</div>`;
+    const ls = lugaresFuera();
+    M.innerHTML = `<div class="empty" style="padding:8px 0 16px;text-align:left">No hay ningún viaje a la vista. Cuando vayas a salir, díselo a Claude («me voy a Menorca del 10 al 17 de julio») y esta pestaña se convertirá en tu destino unos días antes.</div>
+      <div class="sec"><span>Lugares guardados</span><span>${ls.length}</span></div>` +
+      ls.map(([l, n]) => `<button class="card" onclick="st.lugar='${esc(l)}';resetFiltros();render()"><div class="card-main"><div class="card-name">${esc(l)}</div><div class="card-meta">${n} planes</div></div><span class="badge mute">›</span></button>`).join('');
   }
 }
 
 function pintarLista() { render(true); }
 
-function resetFiltros() { st.tipo = 'todo'; st.momento = null; st.q = ''; }
+function resetFiltros() { st.tipo = 'todo'; st.momento = null; st.zona = null; st.q = ''; }
 function setTab(t) { st.tab = t; st.lugar = null; resetFiltros(); render(); scrollTo(0, 0); }
 function setTipo(t) { st.tipo = t; st.momento = null; render(); }
 function setMomento(m) { st.momento = st.momento === m ? null : m; render(); }
