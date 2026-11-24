@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Plannet">
+<meta name="theme-color" content="#0f0f0f">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="icon" href="icon.png">
+<title>Plannet</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f0f0f;
+    --surface: #1a1a1a;
+    --surface2: #222;
+    --border: #2e2e2e;
+    --accent: #6fd3bf;
+    --accent-dim: rgba(111,211,191,0.12);
+    --warn: #f0a860;
+    --warn-dim: rgba(240,168,96,0.14);
+    --text: #f0f0f0;
+    --muted: #8a8a8a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: 'DM Sans', -apple-system, sans-serif;
+    font-size: 16px; line-height: 1.5;
+    max-width: 520px; margin: 0 auto;
+    padding: env(safe-area-inset-top) 0 calc(80px + env(safe-area-inset-bottom));
+  }
+  button { font: inherit; color: inherit; }
+
+  header {
+    position: sticky; top: 0; z-index: 10; background: var(--bg);
+    padding: 20px 20px 12px; border-bottom: 1px solid var(--border);
+  }
+  .top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+  h1 {
+    font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 400;
+    color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .count { font-size: 13px; color: var(--muted); }
+  .title { font-size: 24px; font-weight: 600; margin-top: 4px; line-height: 1.2; }
+  .search {
+    margin-top: 12px; width: 100%;
+    background: var(--surface); color: var(--text);
+    border: 1px solid var(--border); border-radius: 8px;
+    padding: 10px 14px; font: inherit; font-size: 16px; outline: none;
+  }
+  .search:focus { border-color: var(--accent); }
+
+  .chips { display: flex; gap: 8px; overflow-x: auto; margin: 12px -20px 0; padding: 0 20px; scrollbar-width: none; }
+  .chips::-webkit-scrollbar { display: none; }
+  .chips + .chips { margin-top: 8px; }
+  .chip {
+    flex: none; font-family: 'DM Mono', monospace; font-size: 12px;
+    background: var(--surface); color: var(--muted);
+    border: 1px solid var(--border); border-radius: 99px;
+    padding: 6px 12px; cursor: pointer; white-space: nowrap;
+  }
+  .chip.on { background: var(--accent-dim); color: var(--accent); border-color: transparent; }
+  .chip.small { font-size: 11px; padding: 4px 10px; }
+
+  .list { padding: 14px 20px; display: flex; flex-direction: column; gap: 8px; }
+  .sec {
+    font-family: 'DM Mono', monospace; font-size: 11px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--muted); margin: 14px 0 2px;
+    display: flex; justify-content: space-between;
+  }
+  .sec:first-child { margin-top: 0; }
+  .card {
+    display: flex; align-items: center; gap: 12px; width: 100%; text-align: left;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    padding: 13px 14px; cursor: pointer; transition: transform .1s, border-color .2s;
+  }
+  .card:active { transform: scale(0.98); border-color: var(--accent); }
+  .card-main { min-width: 0; flex: 1; }
+  .card-name { font-size: 16px; font-weight: 500; }
+  .card-meta { font-size: 13px; color: var(--muted); margin-top: 1px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .card.pasado { opacity: .45; }
+  .card.pasado .card-name { text-decoration: line-through; }
+  .card.hecho .card-name::after { content: ' ✓'; color: var(--accent); }
+  .badge {
+    flex: none; font-family: 'DM Mono', monospace; font-size: 11px;
+    padding: 3px 8px; border-radius: 4px;
+    background: var(--accent-dim); color: var(--accent);
+  }
+  .badge.warn { background: var(--warn-dim); color: var(--warn); }
+  .badge.mute { background: var(--surface2); color: var(--muted); }
+  details.past summary {
+    list-style: none; cursor: pointer;
+    font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--muted); margin: 14px 0 8px;
+  }
+  details.past summary::-webkit-details-marker { display: none; }
+  details.past[open] summary { color: var(--text); }
+  details.past .inner { display: flex; flex-direction: column; gap: 8px; }
+  .empty { color: var(--muted); text-align: center; padding: 40px 20px; font-size: 15px; }
+  .empty b { color: var(--text); font-weight: 500; }
+
+  .trip {
+    background: linear-gradient(135deg, rgba(111,211,191,.16), rgba(111,211,191,.03));
+    border: 1px solid rgba(111,211,191,.3); border-radius: 12px; padding: 16px;
+  }
+  .trip-name { font-size: 20px; font-weight: 600; }
+  .trip-meta { font-size: 14px; color: var(--muted); margin-top: 2px; }
+  .trip-notes { font-size: 14px; margin-top: 8px; }
+  .back { background: none; border: none; color: var(--accent); font-size: 15px; cursor: pointer; padding: 0; margin-bottom: 4px; }
+
+  .sug-why { font-size: 13px; color: var(--text); opacity: .8; margin-top: 4px; white-space: normal; }
+
+  /* Hoja de detalle */
+  .overlay { position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 30; display: none; }
+  .overlay.open { display: block; }
+  .sheet {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 31;
+    max-width: 520px; margin: 0 auto; max-height: 85vh; overflow-y: auto;
+    background: var(--surface); border-radius: 16px 16px 0 0; border-top: 1px solid var(--border);
+    padding: 10px 20px calc(24px + env(safe-area-inset-bottom));
+    transform: translateY(100%); transition: transform .25s ease;
+  }
+  .sheet.open { transform: translateY(0); }
+  .grab { width: 40px; height: 4px; border-radius: 2px; background: var(--border); margin: 0 auto 14px; }
+  .d-tipo { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+  .d-title { font-size: 24px; font-weight: 600; line-height: 1.2; margin-top: 4px; }
+  .d-title.pasado { text-decoration: line-through; color: var(--muted); }
+  .d-desc { color: var(--muted); margin-top: 6px; font-size: 15px; }
+  .d-rows { margin-top: 16px; border-top: 1px solid var(--border); }
+  .d-row { display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 15px; }
+  .d-row span:first-child { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--muted); min-width: 78px; padding-top: 2px; }
+  .d-actions { display: flex; gap: 10px; margin-top: 18px; }
+  .btn {
+    flex: 1; text-align: center; text-decoration: none;
+    background: var(--accent-dim); color: var(--accent);
+    border-radius: 10px; padding: 12px; font-size: 15px; font-weight: 500;
+  }
+  .d-hint { font-size: 12px; color: var(--muted); margin-top: 14px; text-align: center; }
+
+  /* Barra inferior */
+  nav {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 20;
+    background: rgba(15,15,15,.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid var(--border);
+    padding: 6px 0 calc(6px + env(safe-area-inset-bottom));
+  }
+  nav .inner { max-width: 520px; margin: 0 auto; display: flex; }
+  nav button {
+    flex: 1; background: none; border: none; cursor: pointer;
+    display: flex; flex-direction: column; align-items: center; gap: 2px;
+    color: var(--muted); font-size: 11px; padding: 4px 0;
+  }
+  nav button .ic { font-size: 20px; line-height: 1.1; filter: grayscale(1); opacity: .7; }
+  nav button.on { color: var(--accent); }
+  nav button.on .ic { filter: none; opacity: 1; }
+</style>
+</head>
+<body>
+
+<header id="header"></header>
+<main id="main" class="list"></main>
+
+<div class="overlay" id="overlay"></div>
+<div class="sheet" id="sheet"></div>
+
+<nav><div class="inner" id="nav"></div></nav>
+
+<script>
+const TIPOS = {
+  restaurante: { label: 'Restaurantes', uno: 'Restaurante' },
+  cine:        { label: 'Cine',         uno: 'Cine' },
+  teatro:      { label: 'Teatro',       uno: 'Teatro' },
+  concierto:   { label: 'Conciertos',   uno: 'Concierto' },
+  espectaculo: { label: 'Espectáculos', uno: 'Espectáculo' },
+  museo:       { label: 'Museos y expos', uno: 'Museo / expo' },
+  plan:        { label: 'Planes',       uno: 'Plan' },
+};
+const ORDEN_TIPOS = ['plan','museo','teatro','cine','concierto','espectaculo','restaurante'];
+const MOMENTOS = ['Desayuno','Brunch','Café','Comida','Cena','Vermut','Tardeo','Afterwork','Vinos','Copas','Delivery','Cowork'];
+const CASA = 'Barcelona';
+const AVISO_DIAS = 14;   // la pestaña de destino aparece X días antes del viaje
+const ULTIMOS_DIAS = 10; // "Últimos días" si acaba en menos de X días
+
+let PLANES = [], SUG = [], VIAJES = [], ACTUALIZADO = null, SUG_FECHA = null;
+const st = { tab: 'casa', tipo: 'todo', momento: null, q: '', lugar: null };
+
+const hoy = (() => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); })();
+const dias = (a, b) => Math.round((new Date(b) - new Date(a)) / 864e5);
+const MESES = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+const fmt = iso => { const [y,m,d] = iso.split('-'); return `${+d} ${MESES[m-1]}` + (y !== hoy.slice(0,4) ? ` ${y}` : ''); };
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const norm = s => String(s ?? '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+
+// Estado temporal de un plan: pasado / próximo / últimos días / en curso / sin fecha
+function tiempo(p) {
+  if (p.sesiones && p.sesiones.length) {
+    const fut = p.sesiones.filter(s => s >= hoy).sort();
+    if (!fut.length) return { pasado: true, txt: 'Pasado' };
+    const n = dias(hoy, fut[0]);
+    return { orden: fut[0], txt: n === 0 ? 'Hoy' : n === 1 ? 'Mañana' : fmt(fut[0]), cls: n <= 7 ? 'warn' : '' };
+  }
+  if (p.fecha_fin && p.fecha_fin < hoy) return { pasado: true, txt: 'Pasado' };
+  if (p.fecha_inicio && p.fecha_inicio > hoy) return { orden: p.fecha_inicio, txt: 'Desde ' + fmt(p.fecha_inicio) };
+  if (p.fecha_fin) {
+    const n = dias(hoy, p.fecha_fin);
+    if (n <= ULTIMOS_DIAS) return { orden: p.fecha_fin, txt: n === 0 ? 'Último día' : `Últimos ${n + 1} días`, cls: 'warn' };
+    return { orden: p.fecha_fin, txt: 'Hasta ' + fmt(p.fecha_fin) };
+  }
+  if (p.fecha_inicio) return { orden: '9999', txt: 'En cartel' };
+  return { orden: null };
+}
+
+function viajeActivo() {
+  return VIAJES
+    .filter(v => v.hasta >= hoy && dias(hoy, v.desde) <= AVISO_DIAS)
+    .sort((a, b) => a.desde.localeCompare(b.desde))[0] || null;
+}
+
+function meta(p) {
+  const bits = [];
+  if (p.zona && p.zona !== st.zonaActual) bits.push(p.zona);
+  if (p.tipo === 'restaurante') {
+    if (p.cocina) bits.push(p.cocina);
+    else if (p.momentos) bits.push(p.momentos.slice(0, 3).join(', '));
+  } else {
+    if (p.direccion && !p.zona) bits.push(p.direccion);
+    if (p.horario) bits.push(p.horario);
+    else if (p.precio) bits.push(p.precio);
+  }
+  if (p.notas && /Lidia/.test(p.notas)) bits.push('Lidia ya ha ido');
+  return bits.join(' · ');
+}
+
+function card(p, extra = '') {
+  const t = tiempo(p);
+  const cls = ['card', t.pasado ? 'pasado' : '', p.estado === 'hecho' ? 'hecho' : ''].join(' ');
+  const badge = t.txt && !t.pasado ? `<span class="badge ${t.cls || ''}">${esc(t.txt)}</span>` : '';
+  return `<button class="${cls}" onclick="abrir('${p._src || 'p'}','${esc(p.id)}')">
+    <div class="card-main">
+      <div class="card-name">${esc(p.titulo)}</div>
+      <div class="card-meta">${esc(meta(p))}</div>${extra}
+    </div>${badge}</button>`;
+}
+
+function filtrar(lista) {
+  const q = norm(st.q.trim());
+  return lista.filter(p => {
+    if (p.estado === 'descartado') return false;
+    if (st.tipo !== 'todo' && p.tipo !== st.tipo) return false;
+    if (st.momento && !(p.momentos || []).includes(st.momento)) return false;
+    if (q) {
+      const hay = norm([p.titulo, p.zona, p.cocina, p.descripcion, p.direccion, p.notas, TIPOS[p.tipo]?.uno, (p.momentos || []).join(' ')].join(' '));
+      if (!q.split(/\s+/).every(w => hay.includes(w))) return false;
+    }
+    return true;
+  });
+}
+
+// Lista de un lugar: eventos con fecha arriba, después por tipo (restaurantes por zona), pasados al final plegados
+function renderLugar(lugar) {
+  const base = PLANES.filter(p => p.lugar === lugar);
+  const lista = filtrar(base);
+  const activos = lista.filter(p => !tiempo(p).pasado);
+  const pasados = lista.filter(p => tiempo(p).pasado);
+  let h = '';
+
+  const conFecha = activos.filter(p => tiempo(p).orden).sort((a, b) => tiempo(a).orden.localeCompare(tiempo(b).orden));
+  const sinFecha = activos.filter(p => !tiempo(p).orden);
+  if (conFecha.length) h += `<div class="sec"><span>En cartel</span><span>${conFecha.length}</span></div>` + conFecha.map(p => card(p)).join('');
+
+  const grupos = {};
+  for (const p of sinFecha) {
+    const k = st.tipo === 'restaurante' || (st.tipo === 'todo' && p.tipo === 'restaurante' && st.q)
+      ? (p.zona || 'Otros') : (st.tipo === 'todo' ? TIPOS[p.tipo]?.label || p.tipo : (p.zona || 'Otros'));
+    (grupos[k] = grupos[k] || []).push(p);
+  }
+  let claves = Object.keys(grupos);
+  if (st.tipo === 'todo' && !st.q) {
+    const ord = ORDEN_TIPOS.map(t => TIPOS[t].label);
+    claves.sort((a, b) => ord.indexOf(a) - ord.indexOf(b));
+  } else {
+    claves.sort((a, b) => (a === 'Otros') - (b === 'Otros') || grupos[b].length - grupos[a].length || a.localeCompare(b));
+  }
+  for (const k of claves) {
+    const items = grupos[k].sort((a, b) => (a.estado === 'hecho') - (b.estado === 'hecho') || a.titulo.localeCompare(b.titulo));
+    h += `<div class="sec"><span>${esc(k)}</span><span>${items.length}</span></div>` + items.map(p => card(p)).join('');
+  }
+  if (pasados.length) h += `<details class="past"><summary>Ya pasado · ${pasados.length} ▸</summary><div class="inner">${pasados.map(p => card(p)).join('')}</div></details>`;
+  if (!lista.length) h = `<div class="empty">${base.length ? 'Nada con estos filtros.' : `Aún no hay nada en <b>${esc(lugar)}</b>.<br>Dile a Claude qué añadir.`}</div>`;
+  return h;
+}
+
+function chipsTipo(lugar) {
+  const base = PLANES.filter(p => p.lugar === lugar && p.estado !== 'descartado');
+  const tipos = ORDEN_TIPOS.filter(t => base.some(p => p.tipo === t));
+  let h = `<div class="chips">` + [['todo', 'Todo'], ...tipos.map(t => [t, TIPOS[t].label])]
+    .map(([k, l]) => `<button class="chip ${st.tipo === k ? 'on' : ''}" onclick="setTipo('${k}')">${l}</button>`).join('') + `</div>`;
+  if (st.tipo === 'restaurante') {
+    const ms = MOMENTOS.filter(m => base.some(p => (p.momentos || []).includes(m)));
+    h += `<div class="chips">` + ms.map(m => `<button class="chip small ${st.momento === m ? 'on' : ''}" onclick="setMomento('${m}')">${m}</button>`).join('') + `</div>`;
+  }
+  return h;
+}
+
+function cabecera(titulo, lugar) {
+  const n = PLANES.filter(p => p.lugar === lugar && p.estado !== 'descartado' && !tiempo(p).pasado).length;
+  return `<div class="top"><h1>Plannet</h1><span class="count">${n} planes</span></div>
+    <div class="title">${esc(titulo)}</div>
+    <input class="search" type="search" placeholder="Buscar…" value="${esc(st.q)}" oninput="st.q=this.value;pintarLista()">
+    ${chipsTipo(lugar)}`;
+}
+
+function lugaresFuera() {
+  const c = {};
+  for (const p of PLANES) if (p.lugar !== CASA && p.estado !== 'descartado') c[p.lugar] = (c[p.lugar] || 0) + 1;
+  for (const v of VIAJES) if (!(v.lugar in c)) c[v.lugar] = 0;
+  return Object.entries(c).sort((a, b) => b[1] - a[1]);
+}
+
+function render(soloLista = false) {
+  const Hd = document.getElementById('header'), M = document.getElementById('main');
+  const H = soloLista ? {} : Hd;
+  const v = viajeActivo();
+  if (!soloLista) document.getElementById('nav').innerHTML = [
+    ['casa', '🏙️', CASA],
+    ['destino', v ? '✈️' : '🧭', v ? v.lugar : 'Escapadas'],
+    ['descubrir', '✨', 'Descubrir'],
+  ].map(([k, ic, l]) => `<button class="${st.tab === k ? 'on' : ''}" onclick="setTab('${k}')"><span class="ic">${ic}</span>${esc(l)}</button>`).join('');
+
+  if (st.tab === 'casa') {
+    H.innerHTML = cabecera(CASA, CASA);
+    M.innerHTML = renderLugar(CASA);
+  } else if (st.tab === 'destino') {
+    const lugar = st.lugar || (v && v.lugar);
+    if (lugar) {
+      const viaje = VIAJES.find(x => x.lugar === lugar && x.hasta >= hoy);
+      H.innerHTML = cabecera(lugar, lugar);
+      let top = '';
+      if (st.lugar && !(v && v.lugar === st.lugar)) top += `<button class="back" onclick="st.lugar=null;resetFiltros();render()">‹ Escapadas</button>`;
+      if (viaje) {
+        const n = dias(hoy, viaje.desde);
+        const cuando = n > 0 ? `Faltan ${n} día${n > 1 ? 's' : ''}` : 'Estás allí';
+        top += `<div class="trip"><div class="trip-name">${esc(viaje.lugar)}</div>
+          <div class="trip-meta">${fmt(viaje.desde)} – ${fmt(viaje.hasta)} · ${cuando}</div>
+          ${viaje.notas ? `<div class="trip-notes">${esc(viaje.notas)}</div>` : ''}</div>`;
+      }
+      const sug = SUG.filter(s => s.lugar === lugar && !tiempo(s).pasado);
+      if (sug.length && !st.q && st.tipo === 'todo') top += `<div class="sec"><span>Sugerencias para el viaje</span><span>${sug.length}</span></div>` + sug.map(s => card(s, s.motivo ? `<div class="sug-why">${esc(s.motivo)}</div>` : '')).join('');
+      M.innerHTML = top + renderLugar(lugar);
+    } else {
+      H.innerHTML = `<div class="top"><h1>Plannet</h1></div><div class="title">Escapadas</div>`;
+      const ls = lugaresFuera();
+      M.innerHTML = `<div class="empty" style="padding:8px 0 16px;text-align:left">No hay ningún viaje a la vista. Cuando vayas a salir, díselo a Claude («me voy a Menorca del 10 al 17 de julio») y esta pestaña se convertirá en tu destino unos días antes.</div>
+        <div class="sec"><span>Lugares guardados</span><span>${ls.length}</span></div>` +
+        ls.map(([l, n]) => `<button class="card" onclick="st.lugar='${esc(l)}';resetFiltros();render()"><div class="card-main"><div class="card-name">${esc(l)}</div><div class="card-meta">${n} planes</div></div><span class="badge mute">›</span></button>`).join('');
+    }
+  } else {
+    H.innerHTML = `<div class="top"><h1>Plannet</h1><span class="count">${SUG_FECHA ? 'Actualizado ' + fmt(SUG_FECHA) : ''}</span></div><div class="title">Descubrir</div>`;
+    const vivas = SUG.filter(s => !tiempo(s).pasado);
+    if (!vivas.length) {
+      M.innerHTML = `<div class="empty">Aquí aparecerán las propuestas que Claude encuentre: estrenos, conciertos, expos, restaurantes nuevos…<br><br>Si alguna te encaja, dile <b>«pasa X a mi lista»</b>.</div>`;
+    } else {
+      const g = {};
+      for (const s of vivas) (g[s.lugar] = g[s.lugar] || []).push(s);
+      M.innerHTML = Object.keys(g).sort((a, b) => (b === CASA) - (a === CASA)).map(l =>
+        `<div class="sec"><span>${esc(l)}</span><span>${g[l].length}</span></div>` +
+        g[l].sort((a, b) => (tiempo(a).orden || 'z').localeCompare(tiempo(b).orden || 'z'))
+            .map(s => card(s, s.motivo ? `<div class="sug-why">${esc(s.motivo)}</div>` : '')).join('')
+      ).join('');
+    }
+  }
+}
+
+function pintarLista() { render(true); }
+
+function resetFiltros() { st.tipo = 'todo'; st.momento = null; st.q = ''; }
+function setTab(t) { st.tab = t; st.lugar = null; resetFiltros(); render(); scrollTo(0, 0); }
+function setTipo(t) { st.tipo = t; st.momento = null; render(); }
+function setMomento(m) { st.momento = st.momento === m ? null : m; render(); }
+
+function abrir(src, id) {
+  const p = (src === 's' ? SUG : PLANES).find(x => x.id === id);
+  if (!p) return;
+  const t = tiempo(p);
+  const rows = [];
+  if (p.zona || p.lugar) rows.push(['Dónde', [p.zona, p.lugar !== p.zona ? p.lugar : null].filter(Boolean).join(', ')]);
+  if (p.direccion) rows.push(['Dirección', p.direccion]);
+  if (p.sesiones) rows.push(['Fechas', p.sesiones.map(fmt).join(' · ')]);
+  else if (p.fecha_inicio || p.fecha_fin) rows.push(['Fechas', [p.fecha_inicio && fmt(p.fecha_inicio), p.fecha_fin && fmt(p.fecha_fin)].filter(Boolean).join(' – ') + (t.pasado ? ' (ya pasó)' : '')]);
+  if (p.horario) rows.push(['Horario', p.horario]);
+  if (p.cocina) rows.push(['Cocina', p.cocina]);
+  if (p.momentos) rows.push(['Para', p.momentos.join(', ')]);
+  if (p.precio) rows.push(['Precio', p.precio]);
+  if (p.notas) rows.push(['Notas', p.notas]);
+  if (p.estado === 'hecho') rows.push(['Estado', 'Ya fuimos ✓' + (p.valoracion ? ' · ' + p.valoracion : '')]);
+  const mapa = p.direccion || (p.tipo !== 'plan' || p.zona)
+    ? `https://maps.apple.com/?q=${encodeURIComponent([p.titulo, p.direccion || p.zona, p.lugar].filter(Boolean).join(', '))}` : null;
+  const desc = src === 's' ? (p.motivo || p.descripcion) : p.descripcion;
+  document.getElementById('sheet').innerHTML = `<div class="grab"></div>
+    <div class="d-tipo">${esc(TIPOS[p.tipo]?.uno || p.tipo)}${src === 's' ? ' · Sugerencia' : ''}</div>
+    <div class="d-title ${t.pasado ? 'pasado' : ''}">${esc(p.titulo)}</div>
+    ${desc ? `<div class="d-desc">${esc(desc)}</div>` : ''}
+    <div class="d-rows">${rows.map(([k, v]) => `<div class="d-row"><span>${k}</span><span>${esc(v)}</span></div>`).join('')}</div>
+    <div class="d-actions">
+      ${mapa ? `<a class="btn" href="${mapa}" target="_blank" rel="noopener">Cómo llegar</a>` : ''}
+      ${p.enlace ? `<a class="btn" href="${esc(p.enlace)}" target="_blank" rel="noopener">Web</a>` : ''}
+    </div>
+    <div class="d-hint">${src === 's' ? 'Para guardarla: «pasa ' + esc(p.titulo) + ' a mi lista»' : 'Para cambiarlo, díselo a Claude'}</div>`;
+  document.getElementById('overlay').classList.add('open');
+  document.getElementById('sheet').classList.add('open');
+}
+function cerrar() {
+  document.getElementById('overlay').classList.remove('open');
+  document.getElementById('sheet').classList.remove('open');
+}
+document.getElementById('overlay').onclick = cerrar;
+let y0 = null;
+const sh = document.getElementById('sheet');
+sh.addEventListener('touchstart', e => { y0 = sh.scrollTop <= 0 ? e.touches[0].clientY : null; }, { passive: true });
+sh.addEventListener('touchend', e => { if (y0 !== null && e.changedTouches[0].clientY - y0 > 80) cerrar(); y0 = null; });
+
+async function cargar(ruta) {
+  const r = await fetch(ruta + '?v=' + Date.now(), { cache: 'no-store' });
+  if (!r.ok) throw new Error(ruta);
+  return r.json();
+}
+Promise.all([cargar('datos/planes.json'), cargar('datos/sugerencias.json').catch(() => ({})), cargar('datos/destino.json').catch(() => ({}))])
+  .then(([p, s, d]) => {
+    PLANES = p.planes || []; ACTUALIZADO = p.actualizado;
+    SUG = (s.sugerencias || []).map(x => ({ ...x, _src: 's' })); SUG_FECHA = s.actualizado;
+    VIAJES = d.viajes || [];
+    render();
+  })
+  .catch(() => { document.getElementById('main').innerHTML = '<div class="empty">No se han podido cargar los datos.</div>'; });
+</script>
+</body>
+</html>

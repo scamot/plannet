@@ -1,0 +1,2481 @@
+{
+ "actualizado": "2026-11-24",
+ "planes": [
+  {
+   "id": "brunch-ar",
+   "titulo": "Brunch Ar",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Cerca de casa",
+   "direccion": "Padilla darrera de casa",
+   "cocina": "Brunch i esmorzars",
+   "momentos": [
+    "Desayuno",
+    "Brunch",
+    "Comida"
+   ],
+   "descripcion": "Brunch, dinar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "the-bonding-hub",
+   "titulo": "The Bonding Hub",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Cerca de casa",
+   "direccion": "Av Diagonal davant para Tram",
+   "cocina": "Cowork",
+   "momentos": [
+    "Desayuno",
+    "Café",
+    "Cowork"
+   ],
+   "descripcion": "Esmorzar, cafè, cowork",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "zed",
+   "titulo": "Zed",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Cerca de casa",
+   "direccion": "Carrer de València, 399",
+   "cocina": "Mediterrani",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar y sopar dimarts a divendres",
+   "estado": "pendiente",
+   "notas": "Lidia ya ha ido",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "aupa",
+   "titulo": "Aupa",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Maresme",
+   "direccion": "Cabrera de Mar",
+   "cocina": "Carns",
+   "momentos": [
+    "Comida"
+   ],
+   "descripcion": "Dinar, carns pais basc. (YT B de Vikingo)",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "catalina-gava-mar",
+   "titulo": "Catalina Gavà Mar",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Baix Llobregat",
+   "direccion": "C/Calafell 21-23 (Gavà)",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Mediterrani (Dinars i sopars)",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "camping-mar",
+   "titulo": "Camping Mar",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Barceloneta",
+   "direccion": "Passeig Joan Borbó 103",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Arrosos (Dinar i sopar)",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "casa-costa",
+   "titulo": "Casa Costa",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Barceloneta",
+   "direccion": "Baluard 124, Barcelona (Barceloneta)",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinars i sopars",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "grasa-barcelona",
+   "titulo": "Grasa Barcelona",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Barceloneta",
+   "direccion": "Carrer Felicia i Viladecans 69 - Barcelona",
+   "momentos": [
+    "Comida",
+    "Cena",
+    "Vinos"
+   ],
+   "descripcion": "Bar tapas vinos y playlist (Sopars i dinars)",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "julieta-s",
+   "titulo": "Julieta's",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Barceloneta",
+   "direccion": "Passeig del Mare Nostrum 19-21",
+   "momentos": [
+    "Comida"
+   ],
+   "descripcion": "Arrossòs Dinar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "la-cala-barceloneta",
+   "titulo": "La Cala Barceloneta",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Barceloneta",
+   "direccion": "C/Escar 18",
+   "momentos": [
+    "Desayuno",
+    "Brunch"
+   ],
+   "descripcion": "Coffe, esmorzars i brunch",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "la-cova-fumada",
+   "titulo": "La Cova Fumada",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Barceloneta",
+   "direccion": "C/Baluart 56",
+   "momentos": [
+    "Comida"
+   ],
+   "descripcion": "Dinar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "la-roseta",
+   "titulo": "La Roseta",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Barceloneta",
+   "direccion": "C/Meer 37 Barceloneta",
+   "momentos": [
+    "Desayuno",
+    "Brunch"
+   ],
+   "descripcion": "Esmorzars i Brunch",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "cap-sa-sal",
+   "titulo": "Cap Sa sal",
+   "tipo": "restaurante",
+   "lugar": "Empordà",
+   "zona": "Begur",
+   "direccion": "Carrer Cap sa Sal, 24, 17255 Begur, Girona",
+   "enlace": "https://www.capsasalrestaurant.com/es/el-restaurante/",
+   "momentos": [
+    "Comida",
+    "Cena",
+    "Copas"
+   ],
+   "descripcion": "Dinar sopar coctels",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "bar-pimentel",
+   "titulo": "Bar Pimentel",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Born / Gòtic",
+   "direccion": "Born - Carrer Carders 11",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "canvis-nous",
+   "titulo": "Canvis Nous",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Born / Gòtic",
+   "direccion": "C/ Canvis nous 8 (Born)",
+   "momentos": [
+    "Vinos"
+   ],
+   "descripcion": "Bar vinos naturales, bodeguita con 12 platos",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "espai-quera",
+   "titulo": "Espai Quera",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Born / Gòtic",
+   "direccion": "Carrer Petritxol 2",
+   "momentos": [
+    "Comida",
+    "Cena",
+    "Vinos"
+   ],
+   "descripcion": "Lliberia platillos i vins (Dinars i sopars)",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "fismuler",
+   "titulo": "Fismuler",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Born / Gòtic",
+   "direccion": "Carrer del Rec Comtal, 17, Ciutat Vella",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar i sopar",
+   "estado": "hecho",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "granja-viader",
+   "titulo": "Granja Viader",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Born / Gòtic",
+   "direccion": "Xuclar 4 (Ciutat Vella)",
+   "descripcion": "Granja i xocolateria",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "joel-oyster-bar",
+   "titulo": "Joel Oyster Bar",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Born / Gòtic",
+   "direccion": "La Boqueria",
+   "descripcion": "Lobster roll, ostres i marisc",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "la-sosega",
+   "titulo": "La Sosega",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Born / Gòtic",
+   "direccion": "Carrer de n'Amargós, 1, Ciutat Vella",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Mediterraneo (Dinars i sopars)",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "osteria-borbotta",
+   "titulo": "Osteria Borbotta",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Born / Gòtic",
+   "direccion": "Carrer Sabateret 4",
+   "cocina": "Italià",
+   "descripcion": "Petitet, intim",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "petnat-barcelona",
+   "titulo": "PetNat Barcelona",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Born / Gòtic",
+   "direccion": "carrer dels Ases 16 (Gòtic)",
+   "momentos": [
+    "Afterwork",
+    "Vinos"
+   ],
+   "descripcion": "Bar de vins afterwork",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "sin-nombre-pla-de-palau-12-08003-barcelona",
+   "titulo": "Sin nombre (Pla de Palau, 12, 08003, Barcelona)",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Born / Gòtic",
+   "direccion": "Pla de Palau, 12, 08003, Barcelona",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar, sopar",
+   "estado": "pendiente",
+   "notas": "Delivery",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "somsis-restaurant",
+   "titulo": "Somsis Restaurant",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Born / Gòtic",
+   "direccion": "Carrer Montsió 7",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "the-green-spot",
+   "titulo": "The Green Spot",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Born / Gòtic",
+   "direccion": "Carrer de la Reina Cristina, 12, Ciutat Vella",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Veggi (sopars i dinars)",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "badiu-cerdanya",
+   "titulo": "Badiu Cerdanya",
+   "tipo": "restaurante",
+   "lugar": "Cerdanya",
+   "zona": "Queixans",
+   "direccion": "Paratge Aglets, s/n, 17538 Queixans, Girona",
+   "momentos": [
+    "Copas"
+   ],
+   "descripcion": "coctels nits gastro",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "basecamp-cerdanya",
+   "titulo": "Basecamp Cerdanya",
+   "tipo": "restaurante",
+   "lugar": "Cerdanya",
+   "direccion": "Carrer del Cadí, 17538, Girona",
+   "descripcion": "Molt top",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "cal-cofa",
+   "titulo": "Cal Cofa",
+   "tipo": "restaurante",
+   "lugar": "Cerdanya",
+   "zona": "Llívia",
+   "direccion": "Carrer Frederic Bernades Llivia",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinars i sopars",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "cal-jet-bistrot",
+   "titulo": "Cal Jet Bistrot",
+   "tipo": "restaurante",
+   "lugar": "Cerdanya",
+   "zona": "Ger",
+   "direccion": "Carrer Major 12 Ger (Cerdanya)",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "creperia-d-alp",
+   "titulo": "Creperia d'Alp",
+   "tipo": "restaurante",
+   "lugar": "Cerdanya",
+   "zona": "Alp",
+   "direccion": "Plaça Major 5 Alp",
+   "descripcion": "Creps",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "das-1219",
+   "titulo": "Das 1219",
+   "tipo": "restaurante",
+   "lugar": "Cerdanya",
+   "zona": "Das",
+   "direccion": "Plaça Major, 1 Das",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinars i sopars",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "formatgeria-de-llivia",
+   "titulo": "Formatgeria de Llivia",
+   "tipo": "restaurante",
+   "lugar": "Cerdanya",
+   "zona": "Llívia",
+   "direccion": "Pla de Ro, s/n, 17527 Llívia, Girona",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinars i sopars",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "la-buixeda",
+   "titulo": "La Buixeda",
+   "tipo": "restaurante",
+   "lugar": "Cerdanya",
+   "zona": "Alp",
+   "direccion": "Carrer de l'Esport, 4, 17538 Alp",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinars i sopars",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "la-fonda-de-das",
+   "titulo": "La Fonda de Das",
+   "tipo": "restaurante",
+   "lugar": "Cerdanya",
+   "zona": "Das",
+   "direccion": "Passeig, Carrer Rossend Arús, 3, 17538 Das, Girona",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Tradicional, dinars i sopars",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "la-tasketa",
+   "titulo": "La Tasketa",
+   "tipo": "restaurante",
+   "lugar": "Cerdanya",
+   "zona": "Llívia",
+   "direccion": "Travessera dels Forns, 7, Llivia",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinars i sopars",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "mooma-cerdanya",
+   "titulo": "Mooma Cerdanya",
+   "tipo": "restaurante",
+   "lugar": "Cerdanya",
+   "zona": "Das",
+   "direccion": "Aeròdrom de Das, 17538 Das, Girona",
+   "momentos": [
+    "Comida",
+    "Tardeo"
+   ],
+   "descripcion": "Aperitivo, dinar, tardeo…",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "serendipia-by-la-caleche",
+   "titulo": "Serendipia by La Calèche",
+   "tipo": "restaurante",
+   "lugar": "Cerdanya",
+   "zona": "Llívia",
+   "direccion": "Avinguda Catalunya 68 Llivia",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinars i sopars",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "good-food-puigercerda",
+   "titulo": "Good food Puigercerdà",
+   "tipo": "restaurante",
+   "lugar": "Cerdanya",
+   "enlace": "https://www.instagram.com/good.food.puigcerda/",
+   "momentos": [
+    "Delivery"
+   ],
+   "descripcion": "Take away arrosseria + rustisseria",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "terra-de-pics",
+   "titulo": "Terra de Pics",
+   "tipo": "restaurante",
+   "lugar": "Cerdanya",
+   "zona": "Bolvir",
+   "direccion": "Carrer de la Font, 2, 17539 Bolvir",
+   "momentos": [
+    "Comida",
+    "Vermut"
+   ],
+   "descripcion": "Dinar, vermut",
+   "estado": "hecho",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "bar-electricitat",
+   "titulo": "Bar Electricitat",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Barceloneta",
+   "direccion": "Carrer de Sant Carles, 15",
+   "momentos": [
+    "Comida"
+   ],
+   "descripcion": "Tapas dinars",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "surf-house-barcelona",
+   "titulo": "Surf House Barcelona",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Barceloneta",
+   "direccion": "Carrer d'Emília Llorca Martín, 22",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar, sopar davant del mar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "al-grano-arroz",
+   "titulo": "Al Grano Arroz",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "A domicilio",
+   "enlace": "https://www.algranoarroz.com/",
+   "momentos": [
+    "Delivery"
+   ],
+   "descripcion": "Delivery arròs",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "22-22-by-maite-otegui",
+   "titulo": "22:22 by Maite Otegui",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Carrer de París 165 (Eixample)",
+   "momentos": [
+    "Desayuno",
+    "Brunch",
+    "Café",
+    "Merienda"
+   ],
+   "descripcion": "cafè, pastisseria, esmorzars i brunch i berenars",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "aeroplano-coffe",
+   "titulo": "Aeroplano Coffe",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "C/ de Muntaner, 423",
+   "momentos": [
+    "Desayuno",
+    "Brunch"
+   ],
+   "descripcion": "Esmorzars, Brunch",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "auto-rosellon",
+   "titulo": "Auto Rosellon",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Carrer del Rosselló, 182, Eixample",
+   "momentos": [
+    "Brunch"
+   ],
+   "descripcion": "Brunch",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "bandinis",
+   "titulo": "Bandinis",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Calle Manso 42",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Platillos para copartir (Dinar i sopar)",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "bar-galan",
+   "titulo": "Bar Galán",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "C/Muntaner 212 Barcelona",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "bar-remendios",
+   "titulo": "Bar Remendios",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Muntaner 212, local 3 Barcelona",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "bloome-by-sasha",
+   "titulo": "Bloome by Sasha",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Pg Sant Joan 80 / Via Laitena 45 / Gaudi 45",
+   "momentos": [
+    "Brunch"
+   ],
+   "descripcion": "Brunch",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "bodega-colmado-bar",
+   "titulo": "Bodega Colmado Bar",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Carrer de Provença, 236, L'Eixample",
+   "momentos": [
+    "Desayuno",
+    "Comida"
+   ],
+   "descripcion": "Mediterraneo (Dinars, esmorzars )",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "bodega-solera",
+   "titulo": "Bodega Solera",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Corcega 339",
+   "momentos": [
+    "Comida",
+    "Cena",
+    "Vinos"
+   ],
+   "descripcion": "Vinos platillos (dinar i sopar)",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "bohl",
+   "titulo": "Bohl",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "C/Trafalgar 47 (Eixample)",
+   "momentos": [
+    "Desayuno",
+    "Café",
+    "Comida"
+   ],
+   "descripcion": "Esmorzars dinars i cafè",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "brabo",
+   "titulo": "Brabo",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Carrer Séneca 28",
+   "descripcion": "Especilitat Brasa",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "bruma",
+   "titulo": "Bruma",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Carrer Aribau 31",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "carnal-steak-house",
+   "titulo": "Carnal Steak House",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Carrer Enric Granados, 52",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "casa-anita-en-paris",
+   "titulo": "Casa Anita en París",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Carrer de París, 175",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "casa-fiero-grup-maleducat",
+   "titulo": "Casa Fiero (grup Maleducat)",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Carrer Londres 89",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "casa-luz",
+   "titulo": "Casa Luz",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Ronda Universitat 1, ático",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "cerveceria-la-barcelonesa",
+   "titulo": "Cerveceria La Barcelonesa",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Passeig St Joan 77",
+   "momentos": [
+    "Comida"
+   ],
+   "descripcion": "Dinar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "clara-barcelona",
+   "titulo": "Clara Barcelona",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "C/Buenos aires 42 Barcelona",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Mediterrani (Dinars i sopars)",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "el-puestu",
+   "titulo": "El Puestu",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Ribes 39 Barcelona",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Barra xula Bar Tapas Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "embat",
+   "titulo": "Embat",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Mallorca 304",
+   "enlace": "https://embatrestaurant.com/",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar i sopars",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "fiser-bcn",
+   "titulo": "Fiser Bcn",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "C/Muntaner 248 Barcelona",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Japones + mediterrania Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "flat-cafe-barcelona",
+   "titulo": "Flat Café Barcelona",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Compte Urgell 214 (Eixample)",
+   "momentos": [
+    "Brunch"
+   ],
+   "descripcion": "Brunch",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "gala",
+   "titulo": "Gala",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Provença 286",
+   "descripcion": "Japonés",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "granja-petit-bo",
+   "titulo": "Granja Petit Bo",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Passeig Sant Joan 82 / Mallorca 194",
+   "momentos": [
+    "Brunch"
+   ],
+   "descripcion": "Brunch",
+   "estado": "hecho",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "gresca",
+   "titulo": "Gresca",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Provença 230",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "kamikaze",
+   "titulo": "Kamikaze",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "C/ Rosselló, 197 Barcelona",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "la-tartareria",
+   "titulo": "La Tartareria",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Muntaner 26 Barcelona",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Mediterraneo (Dinars i sopars)",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "little-andaman",
+   "titulo": "Little Andaman",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Carrer Muntaner 182 Barcelona",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Asiatic - Dinar i sopar",
+   "estado": "hecho",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "lomo-alto-lomo-bajo",
+   "titulo": "Lomo Alto Lomo Bajo",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Carrer Aragó 285 (Eixample)",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Carns (Dinars i sopars)",
+   "estado": "pendiente",
+   "notas": "Lidia ya ha ido",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "maison-carne",
+   "titulo": "Maison Carne",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Mallorca 204, Barcelona",
+   "descripcion": "Menu unic: 1kg carn + patates i patés",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "mal-parit",
+   "titulo": "Mal Parit",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Corcega 253",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "maldita-barra",
+   "titulo": "Maldita barra",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Carrer del Rosselló, 242, Eixample",
+   "momentos": [
+    "Brunch",
+    "Cena"
+   ],
+   "descripcion": "Cuina oberta tot el dia coffe, brunch, sopar..",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "mesa-lobo",
+   "titulo": "Mesa Lobo",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "C/Aribau 65",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Influ Francesas + Nórdicas (Dinars i sopars)",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "pacomeralgo",
+   "titulo": "Pacomeralgo",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "C/Muntaner 171",
+   "enlace": "https://restaurantpacomeralgo.com/",
+   "descripcion": "Tapeo de calidad",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "pepa-bar",
+   "titulo": "Pepa Bar",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Aribau 41 (Eixample)",
+   "momentos": [
+    "Afterwork"
+   ],
+   "descripcion": "Afterwork",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "publico-cuina-de-mercat",
+   "titulo": "Público - Cuina de mercat",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Enrric Granados 30, Barcelona",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "restaurant-cruix",
+   "titulo": "Restaurant Cruix",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Carrer Entença 57",
+   "descripcion": "Tapes autor i arròs",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "salut-bistro-barcelona",
+   "titulo": "Salut Bistró Barcelona",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Enrric Granados 58, Barcelona",
+   "momentos": [
+    "Brunch"
+   ],
+   "descripcion": "Brunch",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "sartoria-panatieri",
+   "titulo": "Sartoria Panatieri",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "enlace": "https://sartoriapanatieri.com/ca/",
+   "cocina": "Italià",
+   "descripcion": "Pizza italia (Eixample i Gracia)",
+   "estado": "hecho",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "soma",
+   "titulo": "Soma",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Carrer Provença, 179",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "teoric-taverna-gastronomica",
+   "titulo": "Teòric taverna gastronómica",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Bailen 117",
+   "descripcion": "Cuina catalana eco i proximitat",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "una-mica-de-japo",
+   "titulo": "Una Mica de Japó",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Carrer Aragó 104",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Japonés dinar i sopar",
+   "estado": "pendiente",
+   "notas": "Lidia ya ha ido",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "xuba-tacos",
+   "titulo": "Xuba Tacos",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Mallorca 194",
+   "descripcion": "Tacos",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "dos-kiwis-brewing",
+   "titulo": "Dos Kiwis Brewing",
+   "tipo": "restaurante",
+   "lugar": "Empordà",
+   "zona": "Rupià",
+   "direccion": "Carretera de Parlavà, GI-642, 22, 17131 Rupià, Girona",
+   "momentos": [
+    "Tardeo"
+   ],
+   "descripcion": "Cervesses, tardeo, bar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "els-pescadors-de-llanca",
+   "titulo": "Els Pescadors de Llança",
+   "tipo": "restaurante",
+   "lugar": "Empordà",
+   "zona": "Llançà",
+   "direccion": "Castellar 41, Port De Llançà",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "es-carxofa",
+   "titulo": "És! Carxofa",
+   "tipo": "restaurante",
+   "lugar": "Empordà",
+   "zona": "Púbol",
+   "direccion": "Plaça Major, s/n – 17120 Púbol",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinars i sopars",
+   "estado": "hecho",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "mos-llanca",
+   "titulo": "MOS Llançà",
+   "tipo": "restaurante",
+   "lugar": "Empordà",
+   "zona": "Llançà",
+   "direccion": "Hotel La Goleta,  Carrer Pintor Terruella, 16, Llançà",
+   "descripcion": "Tapas i plats per compartir",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "restaurant-bretta",
+   "titulo": "Restaurant Bretta",
+   "tipo": "restaurante",
+   "lugar": "Empordà",
+   "zona": "Empúries",
+   "direccion": "Carrer de J. Puig i Cadafalch (Seu, d, 17130 Empúries, Girona",
+   "momentos": [
+    "Comida",
+    "Cena",
+    "Tardeo"
+   ],
+   "descripcion": "Terrassa, tardeo dinars i sopars med",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "celler-1923-wine-bar",
+   "titulo": "Celler 1923 wine bar",
+   "tipo": "restaurante",
+   "lugar": "Empordà",
+   "zona": "Peralada",
+   "direccion": "Plaça del Carme, 1 - 17491 Peralada (Girona)",
+   "momentos": [
+    "Comida"
+   ],
+   "descripcion": "Dinar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "handy-bakery",
+   "titulo": "Handy Bakery",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Gràcia",
+   "direccion": "Carrer de Rabassa, 5, pral 2a, Gracia",
+   "enlace": "https://handybakery.es/",
+   "momentos": [
+    "Desayuno"
+   ],
+   "descripcion": "Esmorzars y dolços",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "26-botanic",
+   "titulo": "(26) Botànic",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Gràcia",
+   "direccion": "Carrer de Torrijos, 26, Barcelona",
+   "momentos": [
+    "Brunch",
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Brunch, Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "bar-la-camila",
+   "titulo": "Bar La Camila",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Gràcia",
+   "direccion": "Carrer Banyoles 11 (gracia)",
+   "momentos": [
+    "Desayuno",
+    "Brunch"
+   ],
+   "descripcion": "Esmorzar, Brunch",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "mantequerias-pirenaicas",
+   "titulo": "Mantequerías Pirenaicas",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Gràcia",
+   "direccion": "Carrer Terol 8",
+   "cocina": "Català",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "casa-ines",
+   "titulo": "Casa Inés",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Gràcia",
+   "direccion": "Calle Ramón y Cajal 146 (Gracia)",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinars i sopars",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "fino-bar",
+   "titulo": "Fino Bar",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Gràcia",
+   "direccion": "Carrer Torrent de les Flors 113 (Gracia)",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Xarcuteria, tapas, vi (Dinar. Sopar)",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "fonda-pepa",
+   "titulo": "Fonda pepa",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Gràcia",
+   "direccion": "Tordera 58, Barcelona (Gracia)",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "(Producte proximitat) Dinars i sopars",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "pimpla-bar",
+   "titulo": "Pimpla Bar",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Gràcia",
+   "direccion": "Carrer Encarnació 21",
+   "descripcion": "Tapeo Gracia",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "slow-mov",
+   "titulo": "Slow Mov",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Gràcia",
+   "direccion": "Carrer Neptú 36 (Gracia)",
+   "momentos": [
+    "Desayuno",
+    "Brunch",
+    "Café"
+   ],
+   "descripcion": "cafès esmorzars i brunch",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "suguru-sushi",
+   "titulo": "Suguru Sushi",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Gràcia",
+   "direccion": "Carrer de Verdi, 2, Gràcia",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Japonés dinar i sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "viblioteca",
+   "titulo": "Viblioteca",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Gràcia",
+   "direccion": "Carrer de les Guilleries, 10 Barcelona",
+   "momentos": [
+    "Cena"
+   ],
+   "descripcion": "Sopar",
+   "estado": "pendiente",
+   "notas": "Lidia ya ha ido",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "terraza-martinez",
+   "titulo": "Terraza Martínez",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Montjuïc",
+   "direccion": "Ctra. de Miramar, 38, Sants-Montjuïc, 08038 Barcelona",
+   "cocina": "Arrosos i brases",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinars i sopars",
+   "estado": "pendiente",
+   "añadido": "2026-11-24",
+   "notas": "Lidia ya ha ido"
+  },
+  {
+   "id": "comedor-verdor",
+   "titulo": "Comedor Verdor",
+   "tipo": "restaurante",
+   "lugar": "Empordà",
+   "zona": "Pals",
+   "direccion": "Diseminado Barri del Moli-masos Pals, 1, 17256 Pals, Girona",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar i sopars",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "grava-pals",
+   "titulo": "Grava Pals",
+   "tipo": "restaurante",
+   "lugar": "Empordà",
+   "zona": "Pals",
+   "direccion": "Carrer de la Font, 7",
+   "enlace": "https://www.gravapals.es/",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar i sopars",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "el-sortirdor",
+   "titulo": "El sortirdor",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Poble Sec",
+   "direccion": "Plaça del Sortidor 5 Barcelona",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "riaskru",
+   "titulo": "RiasKRU",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Poble Sec",
+   "direccion": "Carrer Lleida 7",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "amateur-bar",
+   "titulo": "Amateur Bar",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Poblenou",
+   "direccion": "C/ de Llull 101",
+   "momentos": [
+    "Cena",
+    "Vinos"
+   ],
+   "descripcion": "Bar Vins+Música Poblenou (sopars)",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "bajari",
+   "titulo": "Bajari",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Poblenou",
+   "direccion": "Roc Boronat / Pujades",
+   "cocina": "Català",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "briks",
+   "titulo": "Briks",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Poblenou",
+   "direccion": "C/Ciutat de Granada 20",
+   "momentos": [
+    "Brunch"
+   ],
+   "descripcion": "Brunch",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "casa-taos",
+   "titulo": "Casa Taos",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Poblenou",
+   "direccion": "Pere IV 100",
+   "momentos": [
+    "Desayuno",
+    "Brunch",
+    "Cena"
+   ],
+   "descripcion": "Esmorzar, Brunch i sopar",
+   "estado": "hecho",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "catacroquet",
+   "titulo": "Catacroquet",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Poblenou",
+   "direccion": "Roc Boronat / Pere IV",
+   "cocina": "Català especialitat croquetes",
+   "momentos": [
+    "Comida",
+    "Vermut"
+   ],
+   "descripcion": "Vermut + dinar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "itnig",
+   "titulo": "Itnig",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Poblenou",
+   "direccion": "Pujades / Alava",
+   "cocina": "Cowork",
+   "momentos": [
+    "Desayuno",
+    "Café",
+    "Cowork"
+   ],
+   "descripcion": "Esmorzar, cafè, cowork",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "la-iaia-cristina",
+   "titulo": "La Iaia Cristina",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Poblenou",
+   "direccion": "Llacuna / Ramón Turró",
+   "cocina": "Italià pizzes i pastes",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "little-ferm",
+   "titulo": "Little Ferm",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Poblenou",
+   "direccion": "Pere IV 168",
+   "momentos": [
+    "Desayuno",
+    "Brunch"
+   ],
+   "descripcion": "Esmorzar, Brunch",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "madre-lievito",
+   "titulo": "Madre Lievito",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Poblenou",
+   "direccion": "Llacuna / Taulat",
+   "cocina": "Italià pizzes",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "mal-humor-barcelona",
+   "titulo": "Mal Humor Barcelona",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Poblenou",
+   "direccion": "Llacuna 128",
+   "momentos": [
+    "Brunch",
+    "Cena"
+   ],
+   "descripcion": "Brunch i sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "masa-vins",
+   "titulo": "Masa Vins",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Poblenou",
+   "direccion": "Carrer de Pallars, 154, (Sant Martí)",
+   "momentos": [
+    "Afterwork"
+   ],
+   "descripcion": "Afterwork",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "orval-studio",
+   "titulo": "Orval Studio",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Poblenou",
+   "direccion": "Buenaventura Muñoz 31 (Poblenou)",
+   "momentos": [
+    "Desayuno",
+    "Brunch"
+   ],
+   "descripcion": "Brunch i esmorzars",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "sopa",
+   "titulo": "Sopa",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Poblenou",
+   "direccion": "Roc Boronat / Sancho de Ávila",
+   "cocina": "Brunch i esmorzars",
+   "momentos": [
+    "Desayuno",
+    "Brunch"
+   ],
+   "descripcion": "Brunch",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "taulat-44-t44",
+   "titulo": "Taulat 44 (T44)",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Poblenou",
+   "direccion": "Carrer de taulat 44, Barcelona (poblenou)",
+   "momentos": [
+    "Desayuno"
+   ],
+   "descripcion": "Esmorzars",
+   "estado": "pendiente",
+   "notas": "Lidia ya ha ido",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "tope",
+   "titulo": "Tope",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Poblenou",
+   "direccion": "The Hoxton, Poblenou Avinguda Diagonal, 205",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "estacio-renfe-de-queixans",
+   "titulo": "Estació Renfe de Queixans",
+   "tipo": "restaurante",
+   "lugar": "Cerdanya",
+   "zona": "Queixans",
+   "direccion": "Estació Renfe de Queixans, s/n, 17538 Queixans, Girona",
+   "enlace": "https://www.estaciodequeixans.cat/",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "suculent",
+   "titulo": "Suculent",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Raval",
+   "direccion": "Rambla del Raval 45",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinars sopars (regal)",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "trozo-de-oso",
+   "titulo": "Trozo de Oso",
+   "tipo": "restaurante",
+   "lugar": "Empordà",
+   "zona": "Begur",
+   "direccion": "Carretera de Sa Riera, 28c, 17255, Begur",
+   "enlace": "https://trozodeoso.com/",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar i sopars",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "la-madurada",
+   "titulo": "La Madurada",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Sant Andreu",
+   "enlace": "https://www.lamadurada.com",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Carns (Dinars i sopars) Horta i Sant Andreu",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "bar-monry-s",
+   "titulo": "Bar Monry's",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Sarrià",
+   "direccion": "Doctor Fleming 27",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Tapeo Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "bar-treze",
+   "titulo": "Bar Treze",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Sarrià",
+   "direccion": "Carrer Major de Sarrià 115",
+   "momentos": [
+    "Desayuno",
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Esmorzars, tapas, afetrworks dinars i sopars",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "colmado-wilmot",
+   "titulo": "Colmado Wilmot",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Sarrià",
+   "direccion": "Carrer de Calvet, 28",
+   "cocina": "Mediterrani, marisc/peix",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar i sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "flying-monkey-barcelona",
+   "titulo": "Flying Monkey Barcelona",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Sarrià",
+   "direccion": "Amigó 37",
+   "momentos": [
+    "Desayuno",
+    "Brunch",
+    "Vinos"
+   ],
+   "descripcion": "Wine Bar, esmorzars, brunch",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "hotel-mirlo",
+   "titulo": "Hotel Mirlo",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Sarrià",
+   "direccion": "Av. del Tibidabo, 32, Sarrià-Sant Gervasi",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinars/sopars ocasions especials",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "la-marimadona",
+   "titulo": "La Marimadona",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Sarrià",
+   "direccion": "Mestre Nicolau 10",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "lena-dani-garcia",
+   "titulo": "Leña - Dani Garcia",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Sarrià",
+   "direccion": "Pl. Pius XII 4 Les Corts",
+   "momentos": [
+    "Brunch",
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Brunch, Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "margarit",
+   "titulo": "Margarit",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Sarrià",
+   "direccion": "Margarit 58",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Fusió Grega + Catalana (Dinar i sopar)",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "planta-baja-restaurante",
+   "titulo": "Planta Baja Restaurante",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Sarrià",
+   "direccion": "Carrer del Dr. Carulla, 27",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "rabbit-s-bar",
+   "titulo": "Rabbit's Bar",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Sarrià",
+   "direccion": "Ganduxer 16",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "raw-studio",
+   "titulo": "Raw Studio",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Sarrià",
+   "direccion": "Carrer de l'Avenir 66",
+   "momentos": [
+    "Desayuno",
+    "Brunch"
+   ],
+   "descripcion": "Esmorzar, Brunch",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "tiberi-bar",
+   "titulo": "Tiberi Bar",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Sarrià",
+   "direccion": "C/Vila i Vilà 67 Barcelona",
+   "momentos": [
+    "Comida",
+    "Cena",
+    "Vinos"
+   ],
+   "descripcion": "Vins Dinar, Sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "tratoria-enriquetto",
+   "titulo": "Tratoria Enriquetto",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Sarrià",
+   "direccion": "Carrer d'Hercegovina, 24 Barcelona",
+   "cocina": "Italià",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Italià Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "jazminos",
+   "titulo": "Jazminos",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Sarrià",
+   "direccion": "Carrer dels Madrazo, 32",
+   "enlace": "https://jazminos.com/",
+   "descripcion": "Arabe + mediterrani",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "contra-corrent-bar",
+   "titulo": "Contra corrent Bar",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Varios locales",
+   "enlace": "https://contracorrentbar.com/",
+   "momentos": [
+    "Comida",
+    "Cena",
+    "Vinos"
+   ],
+   "descripcion": "cocina creativa + vinos Dinar, sopar (2 restaurants)",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "lluritu",
+   "titulo": "Lluritu",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Varios locales",
+   "enlace": "https://www.lluritu.com/es/",
+   "descripcion": "Peix, marisc (varios llocs)",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "monster-sushi",
+   "titulo": "MONSTER SUSHI",
+   "tipo": "restaurante",
+   "lugar": "Barcelona",
+   "zona": "Varios locales",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "al-kostat-del-mar",
+   "titulo": "Al Kostat del Mar",
+   "tipo": "restaurante",
+   "lugar": "Empordà",
+   "zona": "Begur",
+   "direccion": "Carrer del Mar, 4, 17255, Sa Riera, Begur",
+   "cocina": "Cuina catalana mediterrani",
+   "momentos": [
+    "Comida",
+    "Cena"
+   ],
+   "descripcion": "Dinar, sopar",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "can-joan",
+   "titulo": "Can Joan",
+   "tipo": "restaurante",
+   "lugar": "Empordà",
+   "zona": "Sant Feliu de Boada",
+   "direccion": "San feliu de boada",
+   "cocina": "Cuina casolana emporda",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "isabella-s-llafranc",
+   "titulo": "Isabella's Llafranc",
+   "tipo": "restaurante",
+   "lugar": "Empordà",
+   "zona": "Llafranc",
+   "cocina": "italiana mediterrania",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "id": "funky-pizza",
+   "titulo": "Funky Pizza",
+   "tipo": "restaurante",
+   "lugar": "Empordà",
+   "cocina": "pizza",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "titulo": "Nosotros",
+   "tipo": "cine",
+   "lugar": "Barcelona",
+   "enlace": "https://vertigofilms.es/movie/nosotros/",
+   "notas": "No sé si la vería por plataforma",
+   "id": "nosotros",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "titulo": "Programación Sala Beckett",
+   "tipo": "teatro",
+   "lugar": "Barcelona",
+   "zona": "Poblenou",
+   "direccion": "Carrer de Pere IV, 228",
+   "enlace": "https://www.salabeckett.cat/espectacles/",
+   "descripcion": "Mirar la cartelera de la sala",
+   "id": "programacion-sala-beckett",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "titulo": "Perfectes Desconeguts",
+   "tipo": "teatro",
+   "lugar": "Barcelona",
+   "direccion": "Teatre Poliorama",
+   "fecha_inicio": "2026-03-14",
+   "fecha_fin": "2026-05-10",
+   "precio": "Desde 12 €",
+   "enlace": "https://www.teatrepoliorama.com/ca/programacio/c/884-perfectes-desconeguts.html",
+   "id": "perfectes-desconeguts",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "titulo": "Desaparellats",
+   "tipo": "teatro",
+   "lugar": "Barcelona",
+   "direccion": "Espai Texas",
+   "fecha_inicio": "2026-08-25",
+   "fecha_fin": "2026-09-19",
+   "precio": "12–25,50 €",
+   "enlace": "https://espaitexas.cat/espectacle/desaparellats/",
+   "id": "desaparellats",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "titulo": "La Presència",
+   "tipo": "teatro",
+   "lugar": "Barcelona",
+   "direccion": "Teatre Borràs",
+   "fecha_inicio": "2026-04-03",
+   "fecha_fin": "2026-04-26",
+   "precio": "23–25 €",
+   "enlace": "https://tickets.balanaenviu.com/balanatickets_borras/events/42611?sessionView=LIST",
+   "id": "la-presencia",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "titulo": "Terranova",
+   "tipo": "plan",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "direccion": "Carrer del Comte Borrell, 99",
+   "enlace": "https://terrranova.com/",
+   "descripcion": "Antigua zapatería de 1900 reconvertida en librería de arte, fotografía, música y arquitectura (alternativa)",
+   "id": "terranova",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "titulo": "De les cases del Bon Pastor a la Casa Bloc (1929-1936)",
+   "tipo": "plan",
+   "lugar": "Barcelona",
+   "descripcion": "Itinerario guiado del MUHBA",
+   "sesiones": [
+    "2026-04-11",
+    "2026-05-09",
+    "2026-06-13"
+   ],
+   "precio": "10 €",
+   "enlace": "https://www.barcelona.cat/museuhistoria/ca/activitats/itineraris/de-les-cases-del-bon-pastor-la-casa-bloc-1929-1936-un-mateix-problema-i-dos",
+   "id": "de-les-cases-del-bon-pastor-a-la-casa-bloc-1929-1936",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "titulo": "Visita a la Casa de l’Aigua",
+   "tipo": "plan",
+   "lugar": "Barcelona",
+   "descripcion": "Conductes, dipòsits i comportes. Visita comentada del MUHBA",
+   "sesiones": [
+    "2026-04-11",
+    "2026-04-25"
+   ],
+   "precio": "Gratis con reserva previa",
+   "enlace": "https://www.barcelona.cat/museuhistoria/ca/visites-comentades/conductes-diposits-i-comportes-visita-la-casa-de-laigua",
+   "id": "visita-a-la-casa-de-laigua",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "titulo": "Festival Grec 2026",
+   "tipo": "espectaculo",
+   "lugar": "Barcelona",
+   "fecha_inicio": "2026-06-01",
+   "fecha_fin": "2026-07-31",
+   "descripcion": "Mirar la cartelera de junio y julio",
+   "id": "festival-grec-2026",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "titulo": "Trekking al Monestir de Valldonzella (Collserola)",
+   "tipo": "plan",
+   "lugar": "Barcelona",
+   "zona": "Collserola",
+   "enlace": "https://barcelonasecreta.com/monasterio-santa-margarida-valldonzella-collserola/",
+   "id": "trekking-al-monestir-de-valldonzella-collserola",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "titulo": "Receptes de mona de Pasqua",
+   "tipo": "plan",
+   "lugar": "Barcelona",
+   "enlace": "https://www.3cat.cat/3catinfo/torna-la-mona-de-pasqua-receptes-tradicionals-i-originals-per-fer-a-casa/noticia/3346035/",
+   "notas": "¿Mejor en la app de Recetas?",
+   "id": "receptes-de-mona-de-pasqua",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "titulo": "Can Malirach",
+   "tipo": "plan",
+   "lugar": "Empordà",
+   "zona": "Pals",
+   "descripcion": "Heladería y cerámica",
+   "enlace": "https://www.instagram.com/can_malirach/",
+   "id": "can-malirach",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "titulo": "Recuits Nuri",
+   "tipo": "plan",
+   "lugar": "Empordà",
+   "id": "recuits-nuri",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "titulo": "Cova Empordà",
+   "tipo": "plan",
+   "lugar": "Empordà",
+   "descripcion": "Tienda",
+   "id": "cova-emporda",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "titulo": "Zero Palamós",
+   "tipo": "plan",
+   "lugar": "Empordà",
+   "zona": "Palamós",
+   "descripcion": "Café coworking con rooftop",
+   "id": "zero-palamos",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "titulo": "Experiencias Mas Geli",
+   "tipo": "plan",
+   "lugar": "Empordà",
+   "zona": "Pals",
+   "enlace": "https://masgelipals.cat/es/experiencias-mas-geli/",
+   "id": "experiencias-mas-geli",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "titulo": "Entrespacios",
+   "tipo": "plan",
+   "lugar": "Barcelona",
+   "descripcion": "Rutas guiadas de historia de Barcelona: tours mensuales temáticos y Gòtic gratis los sábados",
+   "enlace": "https://somosentrespacios.com/",
+   "id": "entrespacios",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "titulo": "CosmoCaixa",
+   "tipo": "museo",
+   "lugar": "Barcelona",
+   "zona": "Sant Gervasi",
+   "precio": "Gratis clientes CaixaBank",
+   "enlace": "https://cosmocaixa.org/ca/activitats-cosmocaixa-ciencia",
+   "id": "cosmocaixa",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "titulo": "Els últims dies de Pompeia",
+   "tipo": "museo",
+   "lugar": "Barcelona",
+   "fecha_inicio": "2026-03-20",
+   "precio": "16,50 €",
+   "enlace": "https://pompeii-experience.com/barcelona/ca/",
+   "notas": "Después comer en Salts o La Font del Gat",
+   "id": "els-ultims-dies-de-pompeia",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "titulo": "Recinte Modernista de Sant Pau",
+   "tipo": "museo",
+   "lugar": "Barcelona",
+   "zona": "Guinardó",
+   "horario": "Todos los días",
+   "precio": "11,90–12,60 €",
+   "enlace": "https://santpaubarcelona.org/visites/",
+   "id": "recinte-modernista-de-sant-pau",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "titulo": "Fundació Joan Miró",
+   "tipo": "museo",
+   "lugar": "Barcelona",
+   "zona": "Montjuïc",
+   "precio": "12–18 €",
+   "id": "fundacio-joan-miro",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "titulo": "CaixaForum",
+   "tipo": "museo",
+   "lugar": "Barcelona",
+   "zona": "Montjuïc",
+   "precio": "Gratis clientes CaixaBank",
+   "id": "caixaforum",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "titulo": "Refugi antiaeri de la plaça del Diamant",
+   "tipo": "museo",
+   "lugar": "Barcelona",
+   "zona": "Gràcia",
+   "horario": "Domingos 11:00 y 12:15 (en catalán; el 2º domingo de mes, el segundo pase en castellano)",
+   "precio": "3 €",
+   "enlace": "https://www.tallerhistoriadegracia.cat/thg/refugi-pl-del-diamant/",
+   "id": "refugi-antiaeri-de-la-placa-del-diamant",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "titulo": "Refugi antiaeri de la plaça de la Revolució",
+   "tipo": "museo",
+   "lugar": "Barcelona",
+   "zona": "Gràcia",
+   "horario": "Domingos 12:15 en catalán (el 2º domingo de mes, en castellano)",
+   "precio": "3 €",
+   "enlace": "https://guia.barcelona.cat/es/detall/visites-guiades-al-refugi-antiaeri-de-la-placa-de-la-revolucio_99400718974.html",
+   "id": "refugi-antiaeri-de-la-placa-de-la-revolucio",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "titulo": "Tibidabo",
+   "tipo": "plan",
+   "lugar": "Barcelona",
+   "zona": "Tibidabo",
+   "horario": "Solo fines de semana",
+   "precio": "~40 €",
+   "id": "tibidabo",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "titulo": "Museu Marítim (MMB)",
+   "tipo": "museo",
+   "lugar": "Barcelona",
+   "zona": "Drassanes",
+   "enlace": "https://www.mmb.cat/",
+   "id": "museu-maritim-mmb",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "titulo": "La Pedrera Night Experience",
+   "tipo": "plan",
+   "lugar": "Barcelona",
+   "zona": "Eixample",
+   "precio": "39 €",
+   "enlace": "https://www.lapedrera.com/ca/visites/la-pedrera-night-experience",
+   "id": "la-pedrera-night-experience",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "titulo": "Monestir de Pedralbes",
+   "tipo": "museo",
+   "lugar": "Barcelona",
+   "zona": "Pedralbes",
+   "id": "monestir-de-pedralbes",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "titulo": "Visitas temáticas guiadas del Born CCM",
+   "tipo": "plan",
+   "lugar": "Barcelona",
+   "zona": "Born",
+   "enlace": "https://elbornculturaimemoria.barcelona.cat/programacio/",
+   "id": "visitas-tematicas-guiadas-del-born-ccm",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  },
+  {
+   "titulo": "CultRuta",
+   "tipo": "plan",
+   "lugar": "Barcelona",
+   "descripcion": "Rutas culturales",
+   "enlace": "https://www.cultruta.com/",
+   "id": "cultruta",
+   "estado": "pendiente",
+   "añadido": "2026-11-24"
+  }
+ ]
+}
