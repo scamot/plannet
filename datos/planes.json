@@ -328,8 +328,8 @@
    "añadido": "2026-11-24"
   },
   {
-   "id": "sin-nombre-pla-de-palau-12-08003-barcelona",
-   "titulo": "Sin nombre (Pla de Palau, 12, 08003, Barcelona)",
+   "id": "rooster-and-bubbles",
+   "titulo": "Rooster and Bubbles",
    "tipo": "restaurante",
    "lugar": "Barcelona",
    "zona": "Born / Gòtic",
@@ -2270,16 +2270,6 @@
    "añadido": "2026-11-24"
   },
   {
-   "titulo": "Receptes de mona de Pasqua",
-   "tipo": "plan",
-   "lugar": "Barcelona",
-   "enlace": "https://www.3cat.cat/3catinfo/torna-la-mona-de-pasqua-receptes-tradicionals-i-originals-per-fer-a-casa/noticia/3346035/",
-   "notas": "¿Mejor en la app de Recetas?",
-   "id": "receptes-de-mona-de-pasqua",
-   "estado": "pendiente",
-   "añadido": "2026-11-24"
-  },
-  {
    "titulo": "Can Malirach",
    "tipo": "plan",
    "lugar": "Empordà",
@@ -2355,10 +2345,13 @@
    "fecha_inicio": "2026-03-20",
    "precio": "16,50 €",
    "enlace": "https://pompeii-experience.com/barcelona/ca/",
-   "notas": "Después comer en Salts o La Font del Gat",
+   "notas": "Cerró el 21 de septiembre de 2026. Después comer en Salts o La Font del Gat",
    "id": "els-ultims-dies-de-pompeia",
    "estado": "pendiente",
-   "añadido": "2026-11-24"
+   "añadido": "2026-11-24",
+   "fecha_fin": "2026-09-21",
+   "zona": "Montjuïc",
+   "direccion": "IDEAL Montjuïc (Palau Victòria Eugènia)"
   },
   {
    "titulo": "Recinte Modernista de Sant Pau",
